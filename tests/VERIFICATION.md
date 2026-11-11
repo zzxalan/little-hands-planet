@@ -34,3 +34,10 @@
 - Automated rules and lightweight DOM event tests cover starts, immutable game state, every full round and replay, malformed indices, wrong placement, repeated clicks, absent audio APIs and blocked localStorage, pointer dragging, second pointers, cancellation, out-of-board drops, upward swipes and click fallback.
 - All JS syntax checks, original car-wash regression, 10 safety tests, 10 new-game tests, and expanded route/asset/privacy/catalog integrity checks passed. The temporary QA page was removed before publication.
 - Limits: no physical touchscreen, iPad or Safari testing. Touch/pointer cancellation and multiple pointers are tested in the event harness, while browser interaction uses mouse/pointer input. The cloud Chrome browser reports zero system speech voices, so audible Chinese narration remains unverified. No microphone is used. Device narration availability and physical audio output depend on the visiting device.
+
+## Vehicle expansion (2026-11-11)
+- Based on latest GitHub `master` 6ec48b7; prior five activities unchanged.
+- Excavator: Chrome real browser start, three alternating digs/loads, completion, replay, mute, native keyboard activation passed. New Node harness covers start gate, busy/repeat guards, replay during transition and absent audio/storage.
+- Airplane: Chrome start, all three clouds, rainbow reveal, replay and mute passed. Fixed desktop stage width found during browser review.
+- Browser-rendered same-origin iframe layouts: both pages at 390×844, 844×390, 768×1024 and 1024×768, no horizontal overflow; primary targets within viewport. Airplane cloud minimum 105×108 px, plane minimum 130×86 px; excavator target minimum 86×66 px.
+- Limits: no physical tablet, Safari or real touchscreen verification. Real browser airplane drag was not completed after a temporary browser transport failure. Chinese audible narration remains device-dependent and was not verified. Automated pointer tests are not hardware touch tests.

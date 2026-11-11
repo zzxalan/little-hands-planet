@@ -3,17 +3,20 @@
 A touch-first parent-child game hub in Chinese, designed around age three. Builds on the existing 车车洗澡 Site and preserves its Site identity.
 
 ## Pages
-- `dist/index.html`: illustrated home, five playable game entries, category filters, parent guidance and clear privacy/access information.
+- `dist/index.html`: illustrated home, seven playable interaction entries, category filters, parent guidance and clear privacy/access information.
 - `dist/wash.html`: original three-vehicle car wash, soap/rinse/dry, forgiving touch gestures, replay, mute, added Chinese device voice prompts and home navigation.
 - `dist/safety.html`: three supervised safety stories. The only action path is do not touch, step away, ask an adult. Hazard objects are inert. No shock, unsafe handling, rescue or electrical procedures.
 
-No advertising, purchases, child accounts, data forms, feedback collection, fabricated community or group links. No analytics or third-party runtime assets. The car game stores only its mute preference locally. Games need no separate registration. The current hosted website is publicly accessible; this source repository is private.
+No advertising, purchases, child accounts, data forms, feedback collection, fabricated community or group links. No analytics or third-party runtime assets. The car game stores only its mute preference locally. Games need no separate registration. The current hosted website is publicly accessible; this source repository is public.
 
-The game catalog contains five games.
+The catalog contains seven interactions.
 
 - `dist/shapes.html`: match three shapes by tapping or dragging.
 - `dist/garden.html`: water three plants from seed to flower.
 - `dist/peekaboo.html`: tap or swipe curtains to greet three animals; replay rotates their positions.
+
+- `dist/excavator.html`: tap the sand pile, then the truck bed; three loads, a departing truck and blooming flowers.
+- `dist/airplane.html`: tap clouds or drag the airplane to visit them, reveal sunshine and a rainbow.
 
 ## Develop
 Buildless static assets are in `dist/`. No dependencies or build needed. Preview with `python3 -m http.server 8000 --directory dist` and open `http://localhost:8000`.
@@ -43,3 +46,6 @@ New-game tests use lightweight DOM stubs for state and pointer logic, not real b
 https://cheche-bubble-bath-moon.wavy-loom-3931.chatgpt.site
 
 Source exported from the published Sites version 3, commit `a936149a8cd67b70a683cd45bcb512d1fcf0afa0`. The GitHub copy retains the original static game assets and tests.
+
+## Deployment on EdgeOne
+Use repository branch `master`, no build command, and output directory `dist` for a buildless static deployment. If the project uses direct file upload rather than Git integration, upload the contents of `dist` again after updates. A GitHub push alone does not establish that the custom domain has deployed.

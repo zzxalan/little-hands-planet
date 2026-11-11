@@ -3,7 +3,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const root = path.resolve('dist');
-for (const file of ['index.html','wash.html','safety.html','shapes.html','garden.html','peekaboo.html']) {
+for (const file of ['index.html','wash.html','safety.html','shapes.html','garden.html','peekaboo.html','excavator.html','airplane.html']) {
   const html = fs.readFileSync(path.join(root,file),'utf8');
   for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
     const href = match[1];
@@ -19,7 +19,7 @@ for (const file of ['index.html','wash.html','safety.html','shapes.html','garden
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const categories=[...home.matchAll(/<article[^>]+data-category="([^"]+)"/g)].map(m=>m[1]);
 const filters=[...home.matchAll(/data-filter="([^"]+)"/g)].map(m=>m[1]);
-assert.equal(categories.length,5);assert.deepEqual(filters,['all','habit','discover','safety']);
+assert.equal(categories.length,7);assert.deepEqual(filters,['all','habit','discover','safety']);
 for(const asset of ['wash-card','safety-card','shapes-card','garden-play-card','peekaboo-card']){
  assert(home.includes('assets/'+asset+'.svg'));const svg=fs.readFileSync(path.join(root,'assets',asset+'.svg'),'utf8');assert(svg.includes('viewBox="0 0 720 420"'));assert(!/<script|https?:\/\/(?!www\.w3\.org)/i.test(svg));
 }

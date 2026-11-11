@@ -14,6 +14,7 @@ for (const file of ['index.html','wash.html','safety.html','shapes.html','garden
   }
   assert(!/<(?:input|textarea|form)\b/i.test(html),'No information collection forms');
   assert(html.includes('lang="zh-CN"'));
+  assert(!html.includes('游戏'), 'Parent-facing page copy must use interaction wording: '+file);
 }
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const categories=[...home.matchAll(/<article[^>]+data-category="([^"]+)"/g)].map(m=>m[1]);
